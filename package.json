@@ -1,0 +1,27 @@
+{
+  "name": "preact-ts-core-v3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tofui/vite-plugin": "^0.1.0",
+    "preact": "^10.27.0",
+    "tofui": "^0.1.1"
+  },
+  "devDependencies": {
+    "@nousantx/someutils": "^0.8.0",
+    "@preact/preset-vite": "^2.10.2",
+    "@tenoxui/plugin-moxie": "1.0.0-alpha.14",
+    "@types/node": "^24.3.2",
+    "cssrxp": "^0.4.0",
+    "rollup": "~4.44.2",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2",
+    "vite-plugin-tenoxui-beta": "0.1.0-alpha.7"
+  }
+}
