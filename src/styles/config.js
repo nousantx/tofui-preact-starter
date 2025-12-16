@@ -1,16 +1,10 @@
-import type { CreatorConfig, UtilityFunction } from '@tenoxui/plugin-moxie'
 import { is } from 'cssrxp'
-import apply from './index.ts'
+import apply from './index.js'
 
-const toRem = (value: string): string =>
-  is.number.test(value) ? Number(value) * 0.25 + 'rem' : value
-const spacing =
-  (prop: string): UtilityFunction =>
-  (value) => ({ rules: !value ? null : { [prop]: toRem(value) } })
+const toRem = (value) => (is.number.test(value) ? Number(value) * 0.25 + 'rem' : value)
+const spacing = (prop) => (value) => ({ rules: !value ? null : { [prop]: toRem(value) } })
 
-export const config: CreatorConfig & {
-  aliases?: any
-} = {
+export const config = {
   apply,
   utilities: {
     bg: 'background',

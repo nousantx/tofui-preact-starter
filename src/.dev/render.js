@@ -3,12 +3,12 @@ import { init } from 'tofui'
 
 export const { ui } = init(config)
 
-export function render(node: Document | Element): string {
+export function render(node) {
   const elements = node.querySelectorAll('*')
-  const classNames: string[] = []
-  elements.forEach((element: Element) => {
+  const classNames = []
+  elements.forEach((element) => {
     if (element.classList && element.classList.length > 0) {
-      Array.from(element.classList).forEach((className: string) => {
+      Array.from(element.classList).forEach((className) => {
         classNames.push(className)
       })
     }

@@ -1,13 +1,12 @@
 import { render } from 'preact'
-import { App } from './app.tsx'
+import { App } from './app.jsx'
 import 'virtual:tofui.css'
 // import 'virtual:tenoxui:dev'
-import type { ComponentChildren } from 'preact'
 
 const isDev = import.meta.env.DEV
 
 async function renderApp() {
-  let DevStyler: any = ({ children }: { children: ComponentChildren }) => <>{children}</>
+  let DevStyler = ({ children }) => <>{children}</>
 
   if (isDev) DevStyler = (await import('./.dev/styler')).default
 
@@ -15,7 +14,7 @@ async function renderApp() {
     <DevStyler>
       <App />
     </DevStyler>,
-    document.getElementById('app')!
+    document.getElementById('app')
   )
 }
 
